@@ -1,3 +1,13 @@
 from django.db import models
 
-# Create your models here.
+
+# Во время миграций на основе моделей, которые здесь прописаны,
+# в базе данных будут созданы таблички, которые мы написали
+# Каждый класс отвечает за табличку в базе данных
+class Task(models.Model):
+    title = models.CharField('Field name', max_length=50)
+    task = models.TextField('Description')
+
+    def __str__(self):
+        return self.title
+
